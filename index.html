@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>顏均翰 ＆ 周碩慈 婚禮邀請</title>
-<meta name="description" content="2027.01.09 下午五點，士林青青食尚花園會館．星空之森。誠摯邀請您一同見證。">
+<meta name="description" content="2027.01.09 下午五點半，士林青青食尚花園會館．星空之森。誠摯邀請您一同見證。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jyh-cst-wedding-invite.vercel.app/">
 <meta property="og:site_name" content="顏均翰 ＆ 周碩慈">
 <meta property="og:title" content="顏均翰 ＆ 周碩慈 婚禮邀請">
-<meta property="og:description" content="2027.01.09 下午五點，士林青青食尚花園會館．星空之森。誠摯邀請您一同見證。">
+<meta property="og:description" content="2027.01.09 下午五點半，士林青青食尚花園會館．星空之森。誠摯邀請您一同見證。">
 <meta property="og:image" content="https://jyh-cst-wedding-invite.vercel.app/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -67,9 +67,9 @@ p{font-size:15px;letter-spacing:.06em}
 .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-block;padding:12px 22px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-size:13px;letter-spacing:.22em;background:transparent;font-family:var(--serif);cursor:pointer}
 .btn.fill{background:var(--ink);color:var(--bg)}
-.count{display:flex;justify-content:center;gap:18px;margin-top:6px}
-.count div{min-width:58px}
-.count b{display:block;font-family:var(--script);font-size:38px;font-weight:400;line-height:1.1}
+.count{display:flex;justify-content:center;gap:12px;margin-top:6px}
+.count div{min-width:60px}
+.count b{display:block;font-family:var(--script);font-size:38px;font-weight:400;line-height:1.1;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum","tnum"}
 .count span{font-size:10px;letter-spacing:.3em;color:var(--gold)}
 
 /* photos */
@@ -144,6 +144,7 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
     <div><b id="cd">–</b><span>DAYS</span></div>
     <div><b id="ch">–</b><span>HOURS</span></div>
     <div><b id="cm">–</b><span>MINS</span></div>
+    <div><b id="cs">–</b><span>SECS</span></div>
   </div>
 </section>
 
@@ -204,16 +205,20 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
 
 // Countdown to the ceremony (Asia/Taipei, UTC+8)
 (function(){
-  var target=new Date('2027-01-09T17:00:00+08:00').getTime();
+  var target=new Date('2027-01-09T17:30:00+08:00').getTime();
+  var el={d:document.getElementById('cd'),h:document.getElementById('ch'),m:document.getElementById('cm'),s:document.getElementById('cs')};
+  function pad(n){return String(n).padStart(2,'0')}
   function tick(){
-    var d=target-Date.now();
-    if(d<0){d=0}
-    var days=Math.floor(d/864e5), h=Math.floor(d%864e5/36e5), m=Math.floor(d%36e5/6e4);
-    document.getElementById('cd').textContent=days;
-    document.getElementById('ch').textContent=String(h).padStart(2,'0');
-    document.getElementById('cm').textContent=String(m).padStart(2,'0');
+    var d=Math.max(0,target-Date.now());
+    var secs=Math.floor(d/1000);
+    el.d.textContent=Math.floor(secs/86400);
+    el.h.textContent=pad(Math.floor(secs%86400/3600));
+    el.m.textContent=pad(Math.floor(secs%3600/60));
+    el.s.textContent=pad(secs%60);
+    // re-aim at the next whole second so the seconds never skip or stutter
+    setTimeout(tick,1000-(Date.now()%1000)+5);
   }
-  tick(); setInterval(tick,30000);
+  tick();
 })();
 
 // Add to calendar (.ics)
@@ -222,7 +227,7 @@ document.getElementById('ics').addEventListener('click',function(){
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding//ZH','BEGIN:VEVENT',
     'UID:wedding-20270109@invite',
     'DTSTAMP:20261101T000000Z',
-    'DTSTART:20270109T090000Z','DTEND:20270109T130000Z',
+    'DTSTART:20270109T093000Z','DTEND:20270109T133000Z',
     'SUMMARY:顏均翰 ＆ 周碩慈 婚禮',
     'LOCATION:青青食尚花園會館 星空之森（台北市士林區至善路二段266巷32號）',
     'DESCRIPTION:進入會館前的橋僅容一台車寬，請務必遵守現場人員指揮。',
