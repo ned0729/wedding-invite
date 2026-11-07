@@ -42,6 +42,8 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 .co{margin:18px 22px 0;text-align:center;display:none}
 .co.on{display:block}
 .co .name{font-size:18px;font-weight:500;letter-spacing:.12em}
+.co .free{display:inline-block;margin:10px 0 2px;background:var(--gold);color:#fff;font-size:20px;letter-spacing:.4em;padding:4px 18px 4px 22px;font-weight:500}
+.colines{list-style:none;margin-top:8px;font-size:17px;line-height:1.8;font-weight:500;letter-spacing:.04em}
 .co a{display:inline-block;margin-top:10px;padding:13px 26px;background:var(--gold);color:#fff;text-decoration:none;letter-spacing:.2em;font-size:16px}
 .code{margin:18px 22px 0;text-align:center;display:none}
 .code.on{display:block}
@@ -97,8 +99,10 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
     </div>
 
     <div class="co" id="co">
-      <div class="lab">特約計程車行</div>
+      <div class="lab">特約計程車</div>
       <div class="name" id="coName"></div>
+      <div class="free" id="coFree">免費</div>
+      <ul class="colines" id="coLines"></ul>
       <a id="coTel" href="#">撥打叫車專線</a>
     </div>
 
@@ -119,9 +123,11 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 <script>
 // ---- Fill these in once the taxi company details are final. Empty = hidden. ----
 var CONFIG = {
-  companyName: "",   // 例如：○○計程車行
-  companyPhone: "",  // 例如：02-1234-5678
-  passCode: ""       // 例如：A123（若車行需要核對）
+  companyName: "55688 計程車",
+  companyPhone: "",      // 不必電話叫車，所以留空（有填才會顯示撥號按鈕）
+  free: true,            // 顯示「免費」
+  lines: ["現場有車等候", "不必電話叫車"],
+  passCode: ""           // 例如：A123（若車行需要核對）
 };
 
 (function(){
@@ -131,6 +137,9 @@ var CONFIG = {
   if(CONFIG.companyName||CONFIG.companyPhone){
     document.getElementById('co').classList.add('on');
     document.getElementById('coName').textContent=CONFIG.companyName||'';
+    document.getElementById('coFree').style.display=CONFIG.free?'inline-block':'none';
+    var ul=document.getElementById('coLines');
+    (CONFIG.lines||[]).forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
     var a=document.getElementById('coTel');
     if(CONFIG.companyPhone){a.href='tel:'+CONFIG.companyPhone.replace(/[^0-9+]/g,'');a.textContent='撥打叫車專線　'+CONFIG.companyPhone}
     else a.style.display='none';
