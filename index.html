@@ -241,6 +241,10 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
     <li><b style="font-weight:500">台北市區</b> → 復興北路機場地下道 → 過大直橋右轉 → 過自強隧道即可抵達。</li>
   </ol>
 
+  <h3>計程車 <small>Taxi</small></h3>
+  <p>我們有配合計程車行。搭計程車的賓客，上車時請把<b style="font-weight:500">「賓客乘車證」</b>出示給司機看。</p>
+  <div class="btns" style="justify-content:flex-start;margin-top:12px"><a class="btn fill" id="passlink" href="pass.html">開啟賓客乘車證</a></div>
+
   <h3>捷運 ／ 公車 <small>MRT · Bus</small></h3>
   <p>捷運淡水線至<b style="font-weight:500">士林站</b>，轉乘公車 815、255、304。<br>
      小型公車 18、19，假日休閒公車 101，至<b style="font-weight:500">故宮博物院站</b>下車。</p>
@@ -272,6 +276,7 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
   var to=new URLSearchParams(location.search).get('to');
   var el=document.getElementById('greet');
   el.textContent = to ? '親愛的 '+to.slice(0,20) : '親愛的您';
+  if(to){var pl=document.getElementById('passlink'); if(pl) pl.href='pass.html?to='+encodeURIComponent(to.slice(0,20));}
 })();
 
 // Countdown to the ceremony (Asia/Taipei, UTC+8)
