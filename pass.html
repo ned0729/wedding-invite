@@ -51,11 +51,15 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 .stub::before{left:-11px}.stub::after{right:-11px}
 .stub .script{font-family:var(--script);font-style:italic;font-size:26px}
 .stub p{font-size:12px;letter-spacing:.3em;color:var(--gold);margin-top:6px}
+.back{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 6px;margin-bottom:10px;color:#F6EFE6;text-decoration:none;font-size:17px;letter-spacing:.14em;font-family:var(--serif)}
+.back span{font-size:30px;line-height:1;margin-top:-4px}
+.back.bottom{justify-content:center;margin:18px auto 0;border:1.5px solid rgba(246,239,230,.55);width:100%;max-width:260px}
 .tip{margin-top:14px;color:#D9C9AE;font-size:13px;text-align:center;letter-spacing:.08em;line-height:1.8;opacity:.85}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <a class="back" href="./" id="backTop"><span>‹</span> 返回上一頁</a>
   <div class="ticket">
     <div class="head">
       <div class="en">WEDDING GUEST PASS</div>
@@ -71,7 +75,7 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
       <div class="lab">請載我到　DESTINATION</div>
       <div class="dest">青青食尚花園會館</div>
       <div class="hall">婚宴廳｜<b>星空之森</b></div>
-      <div class="addr" id="addr">台北市士林區至善路二段 266 巷 32 號
+      <div class="addr" id="addr">台北市士林區<br>至善路二段 266 巷 32 號
         <small>No. 32, Ln. 266, Sec. 2, Zhishan Rd., Shilin Dist., Taipei</small></div>
 
       <div class="btns">
@@ -109,6 +113,7 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
     </div>
   </div>
   <div class="tip">請於上車時，將此畫面出示給司機。</div>
+  <a class="back bottom" href="./" id="backBottom"><span>‹</span> 返回上一頁</a>
 </div>
 
 <script>
@@ -134,6 +139,23 @@ var CONFIG = {
     document.getElementById('codeBox').classList.add('on');
     document.getElementById('code').textContent=CONFIG.passCode;
   }
+
+
+  // "Back" — go to the previous page; if there is none (opened from a chat link), go to the invitation itself.
+  (function(){
+    var name=new URLSearchParams(location.search).get('to');
+    var home='./'+(name?'?to='+encodeURIComponent(name.slice(0,20)):'');
+    function back(e){
+      e.preventDefault();
+      var sameSite=false;
+      try{sameSite=document.referrer && new URL(document.referrer).origin===location.origin}catch(_){}
+      if(sameSite && history.length>1){history.back()}else{location.href=home}
+    }
+    ['backTop','backBottom'].forEach(function(id){
+      var a=document.getElementById(id); if(!a) return;
+      a.href=home; a.addEventListener('click',back);
+    });
+  })();
 
   document.getElementById('copy').addEventListener('click',function(){
     var btn=this, text='台北市士林區至善路二段266巷32號 青青食尚花園會館';
