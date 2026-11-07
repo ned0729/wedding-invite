@@ -102,7 +102,9 @@ p{font-size:15px;letter-spacing:.06em}
 .sh-lead{font-size:18px;line-height:1.8;margin:12px 0 22px}
 .sh-label{font-size:13px;letter-spacing:.4em;color:var(--gold);margin:6px 0 12px}
 .sh-times{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.sh-times div{border:1px solid var(--ink);padding:14px 0;font-size:30px;letter-spacing:.08em;font-weight:400;font-variant-numeric:lining-nums tabular-nums;background:var(--bg)}
+.sh-times div{border:1px solid var(--ink);padding:16px 0;font-size:30px;letter-spacing:.08em;font-weight:400;font-variant-numeric:lining-nums tabular-nums;background:var(--bg)}
+.sh-times .rec{border:2px solid var(--gold);background:#fff8ee;position:relative}
+.sh-times .rec i{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-style:normal;font-size:12px;letter-spacing:.3em;padding:1px 12px 1px 15px;line-height:1.7}
 .sh-note{font-size:16px;line-height:1.8;margin:14px 0 26px;text-align:left}
 .sh-note b{font-weight:500;color:#7A5A2B}
 .sh-steps{list-style:none;padding:0;text-align:left;margin:0}
@@ -152,6 +154,7 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
   <div class="btns">
     <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8">開啟地圖</a>
     <button class="btn" id="ics">加入行事曆</button>
+    <a class="btn" href="#shuttle">接駁專車</a>
   </div>
   <div class="rule"></div>
   <div class="eyebrow">COUNTDOWN</div>
@@ -161,6 +164,31 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
     <div><b id="cm">–</b><span>MINS</span></div>
     <div><b id="cs">–</b><span>SECS</span></div>
   </div>
+</section>
+
+<section class="reveal" style="padding-top:8px;padding-bottom:36px">
+  <div class="shuttle" id="shuttle">
+    <div class="sh-t">接駁專車 <small>Shuttle Bus</small></div>
+    <p class="sh-lead">從「士林捷運站」搭專車到會館，<br>輕鬆又方便。</p>
+
+    <div class="sh-label">發車時間（晚宴）</div>
+    <div class="sh-times">
+      <div class="rec"><i>建議</i>16:45</div><div class="rec"><i>建議</i>17:15</div><div>17:45</div><div>18:15</div>
+    </div>
+    <p class="sh-note">典禮 17:30 開始，<b>建議搭 16:45 或 17:15 的班次</b>，並提早 10 分鐘到乘車處等候。</p>
+
+    <div class="sh-label">怎麼搭</div>
+    <ol class="sh-steps">
+      <li><span>1</span><div>搭捷運<b>淡水線</b>到<b>「士林站」</b></div></li>
+      <li><span>2</span><div>從 <b>1 號出口</b>出站</div></li>
+      <li><span>3</span><div><b>直走</b>，到<b>中正路左側</b><br>（中正路 249 號），找「青青接駁專車」</div></li>
+      <li><span>4</span><div>依發車時間上車</div></li>
+    </ol>
+    <div class="btns" style="margin-top:20px">
+      <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF249%E8%99%9F">開啟乘車處地圖</a>
+    </div>
+  </div>
+
 </section>
 
 <div class="photos">
@@ -184,28 +212,6 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
     <h2>交通資訊</h2>
   </div>
 
-
-  <div class="shuttle">
-    <div class="sh-t">接駁專車 <small>Shuttle Bus</small></div>
-    <p class="sh-lead">從「士林捷運站」搭專車到會館，<br>輕鬆又方便。</p>
-
-    <div class="sh-label">發車時間（晚宴）</div>
-    <div class="sh-times">
-      <div>16:45</div><div>17:15</div><div>17:45</div><div>18:15</div>
-    </div>
-    <p class="sh-note">典禮 17:30 開始，<b>建議搭 16:45 或 17:15 的班次</b>，並提早 10 分鐘到乘車處等候。</p>
-
-    <div class="sh-label">怎麼搭</div>
-    <ol class="sh-steps">
-      <li><span>1</span><div>搭捷運<b>淡水線</b>到<b>「士林站」</b></div></li>
-      <li><span>2</span><div>從 <b>1 號出口</b>出站</div></li>
-      <li><span>3</span><div><b>直走</b>，到<b>中正路左側</b><br>（中正路 249 號），找「青青接駁專車」</div></li>
-      <li><span>4</span><div>依發車時間上車</div></li>
-    </ol>
-    <div class="btns" style="margin-top:20px">
-      <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF249%E8%99%9F">開啟乘車處地圖</a>
-    </div>
-  </div>
 
   <h3>自行開車 <small>Drive</small></h3>
   <ol>
