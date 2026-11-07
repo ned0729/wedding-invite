@@ -38,13 +38,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(246,239,230,0) 42%,rgba(246,239,230,.55) 60%,rgba(246,239,230,.92) 71%,var(--bg) 77%)}
 .hero::before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:130px;background:linear-gradient(to bottom,rgba(20,14,8,.38),rgba(20,14,8,0))}
 .hero .top{position:absolute;z-index:2;top:0;left:0;right:0;padding:34px 24px 0;text-align:center;letter-spacing:.36em;font-size:12px;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.35)}
-.hero .names{position:absolute;z-index:2;left:0;right:0;bottom:7%;text-align:center;padding:0 20px}
+.hero .names{position:absolute;z-index:2;left:0;right:0;bottom:92px;text-align:center;padding:0 20px}
 .hero .names .n{font-size:34px;font-weight:400;letter-spacing:.22em}
 .hero .names .amp{font-size:30px;color:var(--gold);margin:2px 0 4px;display:block}
 .hero .names .d{margin-top:18px;font-size:13px;letter-spacing:.34em;color:var(--gold)}
-.hero .scroll{position:absolute;z-index:2;left:50%;bottom:22px;width:1px;height:40px;background:var(--ink);opacity:.45;transform-origin:top;animation:drop 2.4s ease-in-out infinite}
+.hero .scroll{position:absolute;z-index:2;left:0;right:0;bottom:20px;text-align:center;font-size:13px;letter-spacing:.32em;color:var(--ink);opacity:.8;text-decoration:none}
+.hero .scroll .arr{display:block;margin:6px auto 0;width:14px;height:14px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);animation:bob 1.8s ease-in-out infinite}
 @keyframes slow{from{transform:scale(1.08)}to{transform:scale(1)}}
-@keyframes drop{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(45deg);opacity:.5}50%{transform:translateY(7px) rotate(45deg);opacity:1}}
 
 section{padding:68px 28px;text-align:center}
 .eyebrow{font-size:11px;letter-spacing:.42em;color:var(--gold);margin-bottom:14px}
@@ -115,7 +116,7 @@ footer{padding:70px 24px 90px;text-align:center}
 footer .script{font-size:30px}
 footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
 @media (min-width:700px){.wrap{box-shadow:0 0 60px rgba(46,33,24,.12)} body{background:#e9dfd1}}
-@media (prefers-reduced-motion:reduce){.hero img,.hero .scroll{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.hero img,.hero .scroll .arr{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -130,7 +131,7 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
     <div class="n">周碩慈</div>
     <div class="d">2027 · 01 · 09　SAT</div>
   </div>
-  <div class="scroll"></div>
+  <a class="scroll" href="#details">向下滑動查看詳情<span class="arr"></span></a>
 </header>
 
 <section class="story reveal">
