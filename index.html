@@ -70,17 +70,14 @@ p{font-size:15px;letter-spacing:.06em}
 .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-block;padding:12px 22px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-size:13px;letter-spacing:.22em;background:transparent;font-family:var(--serif);cursor:pointer}
 .btn.fill{background:var(--ink);color:var(--bg)}
-details.cal{flex:0 0 auto}
-details.cal[open]{flex-basis:100%}
-details.cal summary{list-style:none;cursor:pointer;user-select:none}
-details.cal summary::-webkit-details-marker{display:none}
-details.cal summary::after{content:" ▾";font-size:11px}
-details.cal[open] summary::after{content:" ▴"}
-.calopt{display:grid;gap:10px;margin-top:12px;text-align:center}
-.calopt .btn{display:block;padding:14px 12px;line-height:1.5}
-.calopt .btn small{display:block;font-size:11px;letter-spacing:.12em;opacity:.8;margin-top:2px}
-.calopt p{font-size:13px;line-height:1.8;opacity:.85;text-align:left;padding:0 4px}
-.calopt p b{font-weight:500}
+.calpick{flex-basis:100%;display:grid;gap:10px;margin-top:10px;text-align:center}
+.calpick[hidden]{display:none}
+.calpick .cp-t{font-size:13px;letter-spacing:.3em;color:var(--gold)}
+.calpick .btn{display:block;padding:14px 12px;line-height:1.5}
+.calpick .btn small{display:block;font-size:11px;letter-spacing:.12em;opacity:.8;margin-top:2px}
+.calhelp{flex-basis:100%;margin-top:6px;font-size:13px;line-height:1.9;opacity:.85;letter-spacing:.04em}
+.calhelp a{color:var(--ink);text-underline-offset:3px;margin:0 4px}
+.calhelp b{font-weight:500}
 .count{display:flex;justify-content:center;gap:12px;margin-top:6px}
 .count div{min-width:60px}
 .count b{display:block;font-family:var(--script);font-size:38px;font-weight:400;line-height:1.1;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum","tnum"}
@@ -189,15 +186,17 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
   </div>
   <div class="btns">
     <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8">開啟地圖</a>
-    <details class="cal">
-      <summary class="btn">加入行事曆</summary>
-      <div class="calopt">
-        <a class="btn fill" href="wedding.ics">加到 iPhone 日曆<small>iPhone、iPad、Mac 使用者</small></a>
-        <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A30%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%AE%B4%E5%AE%A2%EF%BC%89&dates=20270109T093000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A30%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E5%AE%B4%E5%AE%A2%E3%80%82%E9%80%B2%E5%85%A5%E6%9C%83%E9%A4%A8%E5%89%8D%E7%9A%84%E6%A9%8B%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%E5%83%85%E5%AE%B9%E4%B8%80%E5%8F%B0%E8%BB%8A%E5%AF%AC%EF%BC%8C%E8%AB%8B%E5%8B%99%E5%BF%85%E9%81%B5%E5%AE%88%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei">加到 Google 日曆<small>Android／Gmail 使用者</small></a>
-        <p>在 LINE 裡按了沒反應？請改用 <b>Safari</b> 或 <b>Chrome</b> 開啟這個網頁再試一次。</p>
-      </div>
-    </details>
+    <a class="btn" id="calBtn" href="wedding.ics">加入行事曆</a>
     <a class="btn" href="#shuttle">接駁專車</a>
+  
+    <p class="calhelp" id="calHelp">按了沒反應？改用
+      <a href="wedding.ics">iPhone 日曆</a>｜<a target="_blank" rel="noopener" id="calGoogle" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A30%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%AE%B4%E5%AE%A2%EF%BC%89&dates=20270109T093000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A30%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E5%AE%B4%E5%AE%A2%E3%80%82%E9%80%B2%E5%85%A5%E6%9C%83%E9%A4%A8%E5%89%8D%E7%9A%84%E6%A9%8B%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%E5%83%85%E5%AE%B9%E4%B8%80%E5%8F%B0%E8%BB%8A%E5%AF%AC%EF%BC%8C%E8%AB%8B%E5%8B%99%E5%BF%85%E9%81%B5%E5%AE%88%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei">Google 日曆</a><br>
+      <span id="calLine" style="display:none">您正在 LINE 裡開啟，若仍沒反應，請改用 <b>Safari</b> 或 <b>Chrome</b> 開啟這個網頁。</span></p>
+    <div class="calpick" id="calPick" hidden>
+      <div class="cp-t">請選擇您使用的日曆</div>
+      <a class="btn fill" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A30%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%AE%B4%E5%AE%A2%EF%BC%89&dates=20270109T093000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A30%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E5%AE%B4%E5%AE%A2%E3%80%82%E9%80%B2%E5%85%A5%E6%9C%83%E9%A4%A8%E5%89%8D%E7%9A%84%E6%A9%8B%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%E5%83%85%E5%AE%B9%E4%B8%80%E5%8F%B0%E8%BB%8A%E5%AF%AC%EF%BC%8C%E8%AB%8B%E5%8B%99%E5%BF%85%E9%81%B5%E5%AE%88%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei">Google 日曆<small>使用 Gmail／Google 帳號</small></a>
+      <a class="btn" href="wedding.ics">Outlook／Apple 日曆<small>下載行事曆檔後開啟</small></a>
+    </div>
   </div>
   <div class="rule"></div>
   <div class="eyebrow">COUNTDOWN　距離證婚儀式</div>
@@ -356,6 +355,25 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
   if(location.hash==='#static'||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   els.forEach(function(e){io.observe(e)});
+})();
+
+// Add to calendar: pick the right route for the device.
+(function(){
+  var ua=navigator.userAgent||'';
+  var isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var isMac=/Macintosh/i.test(ua)&&!isIOS;
+  var isAndroid=/Android/i.test(ua);
+  var inLine=/Line\//i.test(ua);
+  var btn=document.getElementById('calBtn'), g=document.getElementById('calGoogle');
+  if(!btn||!g) return;
+  var desktop=!isIOS&&!isAndroid;   // computers: let the guest choose, we can't know which calendar they use
+  if(desktop){
+    var pick=document.getElementById('calPick'), help=document.getElementById('calHelp');
+    if(help) help.style.display='none';
+    btn.addEventListener('click',function(e){e.preventDefault(); pick.hidden=!pick.hidden;});
+  } else if(isIOS){ btn.href='wedding.ics'; btn.removeAttribute('target'); }
+  else { btn.href=g.href; btn.target='_blank'; btn.rel='noopener'; }   // Android: Google Calendar
+  if(inLine){ var l=document.getElementById('calLine'); if(l) l.style.display='inline'; }
 })();
 </script>
 </body>
