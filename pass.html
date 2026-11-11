@@ -37,14 +37,9 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 .note{margin:18px 22px 0;border:1.5px solid var(--gold);padding:14px 14px;text-align:left;background:#fff8ee}
 .note .t{font-size:13px;letter-spacing:.3em;color:#8A6532;margin-bottom:6px;font-weight:500}
 .note p{font-size:18px;line-height:1.75;font-weight:500;letter-spacing:.04em}
+.note p{text-wrap:balance}
 .note p+p{margin-top:4px}
 .note b{font-weight:600}
-.co{margin:18px 22px 0;text-align:center;display:none}
-.co.on{display:block}
-.co .name{font-size:20px;font-weight:500;letter-spacing:.12em}
-.co .free{display:inline-block;margin:10px 0 2px;background:var(--gold);color:#fff;font-size:20px;letter-spacing:.4em;padding:4px 18px 4px 22px;font-weight:500}
-.colines{list-style:none;margin-top:8px;font-size:19px;line-height:1.8;font-weight:500;letter-spacing:.04em}
-.co a{display:inline-block;margin-top:10px;padding:13px 26px;background:var(--gold);color:#fff;text-decoration:none;letter-spacing:.2em;font-size:16px}
 .code{margin:18px 22px 0;text-align:center;display:none}
 .code.on{display:block}
 .code b{display:inline-block;font-size:30px;letter-spacing:.3em;margin-left:.3em;font-variant-numeric:lining-nums tabular-nums;border:2px dashed var(--ink);padding:6px 20px}
@@ -94,14 +89,6 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
       <p>從 7-11、全家起，請依現場人員指揮。</p>
     </div>
 
-    <div class="co" id="co">
-      <div class="lab">特約計程車</div>
-      <div class="name" id="coName"></div>
-      <div class="free" id="coFree">免費</div>
-      <ul class="colines" id="coLines"></ul>
-      <a id="coTel" href="#">撥打叫車專線</a>
-    </div>
-
     <div class="code" id="codeBox">
       <div class="lab">乘車代碼</div>
       <b id="code"></b>
@@ -117,26 +104,12 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 </div>
 
 <script>
-// ---- Fill these in once the taxi company details are final. Empty = hidden. ----
+// Optional: put a code here (e.g. "A123") to show an 乘車代碼 box. Empty = hidden.
 var CONFIG = {
-  companyName: "55688 計程車",
-  companyPhone: "",      // 不必電話叫車，所以留空（有填才會顯示撥號按鈕）
-  free: true,            // 顯示「免費」
-  lines: ["現場有車等候", "不必電話叫車"],
-  passCode: ""           // 例如：A123（若車行需要核對）
+  passCode: ""
 };
 
 (function(){
-  if(CONFIG.companyName||CONFIG.companyPhone){
-    document.getElementById('co').classList.add('on');
-    document.getElementById('coName').textContent=CONFIG.companyName||'';
-    document.getElementById('coFree').style.display=CONFIG.free?'inline-block':'none';
-    var ul=document.getElementById('coLines');
-    (CONFIG.lines||[]).forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
-    var a=document.getElementById('coTel');
-    if(CONFIG.companyPhone){a.href='tel:'+CONFIG.companyPhone.replace(/[^0-9+]/g,'');a.textContent='撥打叫車專線　'+CONFIG.companyPhone}
-    else a.style.display='none';
-  }
   if(CONFIG.passCode){
     document.getElementById('codeBox').classList.add('on');
     document.getElementById('code').textContent=CONFIG.passCode;
