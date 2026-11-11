@@ -5,20 +5,21 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:wedding-20270109-yan-chou@jyh-cst-wedding-invite.vercel.app
-DTSTAMP:20261101T000000Z
-DTSTART:20270109T093000Z
+DTSTAMP:20261112T000000Z
+DTSTART:20270109T090000Z
 DTEND:20270109T133000Z
-SEQUENCE:3
+SEQUENCE:4
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SUMMARY:顏均翰 ＆ 周碩慈 婚禮（17:30 證婚儀式／18:00 宴
- 客）
+SUMMARY:顏均翰 ＆ 周碩慈 婚禮（17:00 證婚儀式／18:00 入席
+ ／18:30 開席）
 LOCATION:青青食尚花園會館 婚宴廳「星空之森」（台北市
  士林區至善路二段266巷32號）
-DESCRIPTION:16:00 起開放進場（園區無其他賓客時皆可拍照
- ）。17:30 證婚儀式，18:00 宴客。巷口兩側是 7-11 與全家
- ，請由此轉進小巷（至善路 266 巷）；前方的橋一次只
- 能過一台車，從 7-11、全家起請依現場人員指揮。
+DESCRIPTION:16:00 起開放進場（園區無其他賓客時皆可拍照）
+ 。17:00 證婚儀式，18:00 晚宴入席，18:30 晚宴開席。巷口
+ 兩側是 7-11 與全家，請由此轉進小巷（至善路 266 巷）；
+ 前方的橋一次只能過一台車，從 7-11、全家起請依現場人
+ 員指揮。
 BEGIN:VALARM
 TRIGGER:-P1D
 ACTION:DISPLAY
