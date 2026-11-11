@@ -98,8 +98,8 @@ p{font-size:15px;letter-spacing:.06em}
 .notice{text-align:left}
 .notice .t{text-align:center}
 .rd{list-style:none;padding:0;margin:10px 0 12px}
-.rd li{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;font-size:17px;line-height:1.7}
-.rd span{flex:0 0 30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;margin-top:1px}
+.rd li{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;font-size:17px;line-height:30px}
+.rd span{flex:0 0 30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;margin-top:0}
 .rd b{font-weight:500}
 .notice .m{font-size:14px;line-height:1.85;padding-top:10px;border-top:1px solid rgba(169,130,74,.35)}
 
@@ -113,6 +113,8 @@ p{font-size:15px;letter-spacing:.06em}
 .tr ol{padding-left:1.4em;font-size:14px;letter-spacing:.04em}
 .tr li{margin-bottom:8px;line-height:1.75}
 .tr p{font-size:14px}
+.tr ol.rd{padding-left:0;font-size:17px;letter-spacing:normal}
+.tr .rd li{margin-bottom:10px;line-height:30px}
 .times{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px;margin-top:10px}
 .times b{font-weight:400;color:var(--gold);letter-spacing:.2em}
 
@@ -144,8 +146,8 @@ p{font-size:15px;letter-spacing:.06em}
 .sh-note{font-size:16px;line-height:1.8;margin:14px 0 26px;text-align:left}
 .sh-note b{font-weight:500;color:#7A5A2B}
 .sh-steps{list-style:none;padding:0;text-align:left;margin:0}
-.sh-steps li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:18px;line-height:1.7}
-.sh-steps span{flex:0 0 36px;height:36px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:18px;margin-top:2px}
+.sh-steps li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:18px;line-height:32px}
+.sh-steps span{flex:0 0 32px;height:32px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:17px;line-height:1;margin-top:0}
 .sh-steps b{font-weight:500}
 .mapsec{padding-top:30px;padding-bottom:20px}
 .mapimg{display:block;width:100%;height:auto;margin:6px 0 0}
@@ -266,27 +268,6 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
   </div>
 </section>
 
-<section class="reveal">
-  <div class="notice">
-    <div class="t">NOTICE　行車提醒</div>
-    <ol class="rd">
-      <li><span>1</span><div>先找到巷口兩側的 <b>7-11</b> 和 <b>全家</b></div></li>
-      <li><span>2</span><div>從這裡<b>轉進小巷</b>（至善路 266 巷）</div></li>
-      <li><span>3</span><div>前方的橋，<b>一次只能過一台車</b></div></li>
-    </ol>
-    <div class="m">從 7-11、全家這裡開始，會有現場工作人員指揮車輛，請依指示行駛，謝謝您的配合。</div>
-  </div>
-</section>
-
-<section class="reveal" style="padding-top:0;padding-bottom:10px">
-  <div class="access">
-    <div class="ac-t">ACCESSIBILITY</div>
-    <div class="ac-h">長輩與行動不便的貴賓</div>
-    <p><b>園區皆為平面</b>，不需要爬階梯。</p>
-    <p>若需要協助，可向<b>門口的會場人員</b>詢問<b>「園區接駁車」</b>（類似高爾夫球車）。</p>
-  </div>
-</section>
-
 <section class="tr reveal" style="padding-top:20px">
   <div style="text-align:center">
     <div class="eyebrow">OTHER WAYS</div>
@@ -303,6 +284,18 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
     <li><b style="font-weight:500">台北市北區</b> → 中山北路或文林路 → 中正路往外雙溪方向即可抵達。</li>
     <li><b style="font-weight:500">台北市區</b> → 復興北路機場地下道 → 過大直橋右轉 → 過自強隧道即可抵達。</li>
   </ol>
+
+  <div style="margin-top:6px">
+    <div class="notice">
+      <div class="t">NOTICE　行車提醒</div>
+      <ol class="rd">
+        <li><span>1</span><div>先找到巷口兩側的 <b>7-11</b> 和 <b>全家</b></div></li>
+        <li><span>2</span><div>從這裡<b>轉進小巷</b>（至善路 266 巷）</div></li>
+        <li><span>3</span><div>前方的橋，<b>一次只能過一台車</b></div></li>
+      </ol>
+      <div class="m">從 7-11、全家這裡開始，會有現場工作人員指揮車輛，請依指示行駛，謝謝您的配合。</div>
+    </div>
+  </div>
 
   <h3>停車 <small>Parking</small></h3>
   <div class="park">
@@ -325,6 +318,15 @@ footer p{margin-top:10px;font-size:13px;letter-spacing:.3em;color:var(--gold)}
   <p>捷運淡水線至<b style="font-weight:500">士林站</b>，轉乘公車 815、255、304。<br>
      小型公車 18、19，假日休閒公車 101，至<b style="font-weight:500">故宮博物院站</b>下車。</p>
 
+</section>
+
+<section class="reveal" style="padding-top:8px;padding-bottom:28px">
+  <div class="access">
+    <div class="ac-t">ACCESSIBILITY</div>
+    <div class="ac-h">長輩與行動不便的貴賓</div>
+    <p><b>園區皆為平面</b>，不需要爬階梯。</p>
+    <p>若需要協助，可向<b>門口的會場人員</b>詢問<b>「園區接駁車」</b>（類似高爾夫球車）。</p>
+  </div>
 </section>
 
 <footer class="reveal">
