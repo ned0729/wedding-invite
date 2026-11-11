@@ -16,35 +16,34 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 .wrap{max-width:460px;margin:0 auto}
 .ticket{position:relative;background:var(--bg);border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.35)}
 .head{background:var(--ink);color:var(--bg);text-align:center;padding:22px 18px 18px;border-bottom:3px solid var(--gold)}
-.head .en{font-size:11px;letter-spacing:.5em;color:#D9BE8F;margin-bottom:6px}
+.head .en{font-size:12px;letter-spacing:.5em;color:#D9BE8F;margin-bottom:6px}
 .head h1{font-size:26px;font-weight:500;letter-spacing:.3em;margin-left:.3em}
 .head .sub{font-size:13px;letter-spacing:.2em;margin-top:6px;opacity:.85}
 .body{padding:22px 22px 6px;text-align:center}
-.lab{font-size:11px;letter-spacing:.45em;color:var(--gold);margin-bottom:6px}
-.guest{font-size:24px;letter-spacing:.2em;font-weight:500;margin-bottom:4px}
+.lab{font-size:13px;letter-spacing:.4em;color:#8A6532;margin-bottom:6px;font-weight:500}
 .rule{height:1px;background:rgba(46,33,24,.18);margin:18px 0}
 .dest{font-size:30px;font-weight:600;letter-spacing:.08em;line-height:1.35}
-.hall{margin-top:6px;font-size:16px;color:var(--gold);letter-spacing:.14em}
+.hall{margin-top:6px;font-size:17px;color:#8A6532;letter-spacing:.14em}
 .hall b{font-size:24px;font-weight:500;letter-spacing:.26em}
 .addr{margin-top:14px;font-size:19px;font-weight:500;letter-spacing:.02em;line-height:1.6;text-wrap:balance}
-.addr small{display:block;font-size:12px;letter-spacing:.06em;opacity:.7;font-weight:300;margin-top:2px;font-family:Georgia,serif}
+.addr small{display:block;font-size:13px;letter-spacing:.04em;opacity:.8;font-weight:300;margin-top:2px;font-family:Georgia,serif}
 .btns{display:flex;gap:10px;margin-top:16px}
-.btn{flex:1;display:block;padding:15px 8px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-size:15px;letter-spacing:.18em;background:transparent;font-family:var(--serif);cursor:pointer;text-align:center}
+.btn{flex:1;display:block;padding:15px 8px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-size:17px;letter-spacing:.16em;background:transparent;font-family:var(--serif);cursor:pointer;text-align:center}
 .btn.fill{background:var(--ink);color:var(--bg)}
-.when{display:grid;grid-template-columns:1fr 1fr;gap:0;text-align:center}
+.when{display:grid;grid-template-columns:1fr 1fr;gap:0;text-align:center;align-items:center}
 .when div{padding:4px 6px}
 .when div+div{border-left:1px solid rgba(46,33,24,.18)}
 .when .big{font-size:20px;letter-spacing:.06em;font-weight:500;margin-top:2px}
 .note{margin:18px 22px 0;border:1.5px solid var(--gold);padding:14px 14px;text-align:left;background:#fff8ee}
-.note .t{font-size:12px;letter-spacing:.4em;color:var(--gold);margin-bottom:6px;font-weight:500}
-.note p{font-size:17px;line-height:1.75;font-weight:500;letter-spacing:.04em}
+.note .t{font-size:13px;letter-spacing:.3em;color:#8A6532;margin-bottom:6px;font-weight:500}
+.note p{font-size:18px;line-height:1.75;font-weight:500;letter-spacing:.04em}
 .note p+p{margin-top:4px}
 .note b{font-weight:600}
 .co{margin:18px 22px 0;text-align:center;display:none}
 .co.on{display:block}
-.co .name{font-size:18px;font-weight:500;letter-spacing:.12em}
+.co .name{font-size:20px;font-weight:500;letter-spacing:.12em}
 .co .free{display:inline-block;margin:10px 0 2px;background:var(--gold);color:#fff;font-size:20px;letter-spacing:.4em;padding:4px 18px 4px 22px;font-weight:500}
-.colines{list-style:none;margin-top:8px;font-size:17px;line-height:1.8;font-weight:500;letter-spacing:.04em}
+.colines{list-style:none;margin-top:8px;font-size:19px;line-height:1.8;font-weight:500;letter-spacing:.04em}
 .co a{display:inline-block;margin-top:10px;padding:13px 26px;background:var(--gold);color:#fff;text-decoration:none;letter-spacing:.2em;font-size:16px}
 .code{margin:18px 22px 0;text-align:center;display:none}
 .code.on{display:block}
@@ -56,8 +55,8 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
 .stub p{font-size:12px;letter-spacing:.3em;color:var(--gold);margin-top:6px}
 .back{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 6px;margin-bottom:10px;color:#F6EFE6;text-decoration:none;font-size:17px;letter-spacing:.14em;font-family:var(--serif)}
 .back span{font-size:30px;line-height:1;margin-top:-4px}
-.back.bottom{justify-content:center;margin:18px auto 0;border:1.5px solid rgba(246,239,230,.55);width:100%;max-width:260px}
-.tip{margin-top:14px;color:#D9C9AE;font-size:13px;text-align:center;letter-spacing:.08em;line-height:1.8;opacity:.85}
+.back.bottom{justify-content:center;margin:18px auto 0;border:1.5px solid rgba(246,239,230,.85);width:100%;max-width:260px}
+.tip{margin-top:18px;padding:14px 12px;border:2px solid #E3C48A;background:rgba(227,196,138,.14);color:#FFE7B8;font-size:20px;font-weight:600;text-align:center;letter-spacing:.08em;line-height:1.6}
 </style>
 </head>
 <body>
@@ -70,10 +69,6 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
     </div>
 
     <div class="body">
-      <div class="lab">賓客</div>
-      <div class="guest" id="guest">貴賓</div>
-      <div class="rule"></div>
-
       <div class="lab">請載我到　DESTINATION</div>
       <div class="dest">青青食尚花園會館</div>
       <div class="hall">婚宴廳｜<b>星空之森</b></div>
@@ -98,7 +93,26 @@ body{background:#2E2118;color:var(--ink);font-family:var(--serif);font-weight:40
       <p>前方的橋，一次只能過一台車。</p>
       <p>從 7-11、全家起，請依現場人員指揮。</p>
     </div>
-  <div class="tip">請於上車時，將此畫面出示給司機。</div>
+
+    <div class="co" id="co">
+      <div class="lab">特約計程車</div>
+      <div class="name" id="coName"></div>
+      <div class="free" id="coFree">免費</div>
+      <ul class="colines" id="coLines"></ul>
+      <a id="coTel" href="#">撥打叫車專線</a>
+    </div>
+
+    <div class="code" id="codeBox">
+      <div class="lab">乘車代碼</div>
+      <b id="code"></b>
+    </div>
+
+    <div class="stub">
+      <div class="script">With love,</div>
+      <p>均翰 ＆ 碩慈</p>
+    </div>
+  </div>
+  <div class="tip">請於上車時，<br>將此畫面出示給司機。</div>
   <a class="back bottom" href="./" id="backBottom"><span>‹</span> 返回上一頁</a>
 </div>
 
@@ -113,9 +127,6 @@ var CONFIG = {
 };
 
 (function(){
-  var to=new URLSearchParams(location.search).get('to');
-  if(to) document.getElementById('guest').textContent=to.slice(0,20);
-
   if(CONFIG.companyName||CONFIG.companyPhone){
     document.getElementById('co').classList.add('on');
     document.getElementById('coName').textContent=CONFIG.companyName||'';
