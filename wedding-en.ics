@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Yan-Chou Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wedding-20270109-yan-chou@jyh-cst-wedding-invite.vercel.app
+DTSTAMP:20261116T000000Z
+DTSTART:20270109T090000Z
+DTEND:20270109T133000Z
+SEQUENCE:4
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SUMMARY:Wedding of 顏均翰 & 周碩慈 (17:00 Ceremony / 18:00 Seating / 
+ 18:30 Dinner)
+LOCATION:CHIN CHIN Garden Restaurant\, Starry Forest Hall (No. 32\, Ln. 266
+ \, Sec. 2\, Zhishan Rd.\, Shilin Dist.\, Taipei City)
+DESCRIPTION:Doors open from 16:00 (photos welcome when no other guests are 
+ on the grounds). Ceremony 17:00\, seating 18:00\, dinner 18:30. Look for t
+ he 7-11 and FamilyMart on both sides of the lane entrance and turn into th
+ e small lane (Ln. 266\, Zhishan Rd.)\; the bridge ahead fits one car at a 
+ time. From the 7-11 and FamilyMart onward\, please follow the on-site staf
+ f.
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow is the wedding of 均翰 and 碩慈
+END:VALARM
+END:VEVENT
+END:VCALENDAR

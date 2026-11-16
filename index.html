@@ -17,9 +17,12 @@
 <meta name="twitter:image" content="https://jyh-cst-wedding-invite.vercel.app/og.jpg">
 <meta name="theme-color" content="#F6EFE6">
 <meta name="robots" content="noindex,nofollow">
+<script>
+(function(){var l='zh';try{var q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='zh')l=q;else{var v=localStorage.getItem('invite-lang');if(v==='en'||v==='zh')l=v}}catch(e){}if(l==='en'){document.documentElement.lang='en';document.documentElement.className+=' pending-en'}})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F6EFE6; --ink:#2E2118; --gold:#A9824A; --gold-d:#7F5A28; --line:rgba(46,33,24,.18); --soft:#EDE3D5;
@@ -37,7 +40,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:
 .hero img{position:absolute;top:0;left:0;width:100%;height:76%;object-fit:cover;object-position:50% 40%;animation:slow 16s ease-out both}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(246,239,230,0) 42%,rgba(246,239,230,.55) 60%,rgba(246,239,230,.92) 71%,var(--bg) 77%)}
 .hero::before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:150px;background:linear-gradient(to bottom,rgba(20,14,8,.55),rgba(20,14,8,0))}
-.hero .top{position:absolute;z-index:2;top:0;left:0;right:0;padding:34px 24px 0;text-align:center;letter-spacing:.36em;font-size:13px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.hero .top{position:absolute;z-index:2;top:0;left:0;right:0;padding:46px 24px 0;text-align:center;letter-spacing:.36em;font-size:13px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .hero .names{position:absolute;z-index:2;left:0;right:0;bottom:92px;text-align:center;padding:0 20px}
 .hero .names .n{font-size:34px;font-weight:400;letter-spacing:.22em}
 .hero .names .amp{font-size:30px;color:var(--gold);margin:2px 0 4px;display:block}
@@ -163,11 +166,37 @@ footer{padding:70px 24px 90px;text-align:center}
 footer .script{font-size:30px}
 footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
 @media (min-width:700px){.wrap{box-shadow:0 0 60px rgba(46,33,24,.12)} body{background:#e9dfd1}}
+/* language switch */
+.pending-en body{visibility:hidden;animation:unhide 0s 1.5s forwards}
+@keyframes unhide{to{visibility:visible}}
+.lang{position:fixed;z-index:50;top:10px;right:max(10px,calc((100vw - 560px)/2 + 10px));display:flex;border:1px solid var(--gold);border-radius:999px;background:rgba(246,239,230,.9);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow:hidden;box-shadow:0 1px 8px rgba(46,33,24,.15)}
+.lang button{font:inherit;font-family:var(--serif);font-size:13px;line-height:1;letter-spacing:.06em;padding:7px 12px 7px 13px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--gold-d);outline-offset:-2px}
+.zhsub{display:block;margin-top:3px;font-size:14px;font-weight:400;opacity:.85}
+/* English typography: Latin serif first, no CJK tracking, small caps-style labels */
+html[lang="en"]{--serif:"Noto Serif","Noto Serif TC","Songti TC",serif}
+html[lang="en"] *{letter-spacing:.01em!important}
+html[lang="en"] .eyebrow,html[lang="en"] .row .k,html[lang="en"] .count span,html[lang="en"] .sh-label,html[lang="en"] .ac-t,html[lang="en"] .notice .t,html[lang="en"] .hero .top,html[lang="en"] .hero .names .d,html[lang="en"] .sh-times .rec i,html[lang="en"] .pk-t i,html[lang="en"] .calpick .cp-t{letter-spacing:.2em!important;text-transform:uppercase}
+html[lang="en"] .hero .scroll{letter-spacing:.1em!important;text-transform:uppercase}
+html[lang="en"] .eyebrow{padding-left:.2em}
+html[lang="en"] .greet,html[lang="en"] .story p{padding-left:0}
+html[lang="en"] .hero .names .n{letter-spacing:.22em!important}
+html[lang="en"] .fnames{letter-spacing:.3em!important}
+html[lang="en"] footer p{letter-spacing:.06em!important}
+html[lang="en"] h2{letter-spacing:.04em!important;margin-left:0!important}
+html[lang="en"] .btn{letter-spacing:.06em!important}
+html[lang="en"] .sh-t{letter-spacing:.04em!important}
+html[lang="en"] .hall b{letter-spacing:.06em!important}
+html[lang="en"] .tr h3{letter-spacing:.04em!important}
+html[lang="en"] p,html[lang="en"] .row .s,html[lang="en"] .m{text-wrap:pretty}
+html[lang="en"] .row .v,html[lang="en"] .sh-lead,html[lang="en"] .ac-h,html[lang="en"] .pk-t{text-wrap:balance}
 @media (max-width:340px){.row .v{font-size:16.5px;letter-spacing:.05em}}
 @media (prefers-reduced-motion:reduce){.hero img,.hero .scroll .arr{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
+<div class="lang" role="group" aria-label="Language / 語言"><button type="button" data-lang="zh" aria-pressed="true">中文</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
 <div class="wrap">
 
 <header class="hero">
@@ -179,45 +208,45 @@ footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
     <div class="n">周碩慈</div>
     <div class="d">2027 · 01 · 09　SAT</div>
   </div>
-  <a class="scroll" href="#details">向下滑動查看詳情<span class="arr"></span></a>
+  <a class="scroll" href="#details"><span data-en="Scroll down for details">向下滑動查看詳情</span><span class="arr"></span></a>
 </header>
 
 <section class="story reveal">
   <div class="eyebrow">INVITATION</div>
   <div class="greet" id="greet">親愛的您</div>
-  <p>我們的故事<br><span class="nw">在 <span class="hl">2021 年 1 月 9 日</span>悄悄起筆</span></p>
-  <p>六年後的同一天</p>
-  <p>想邀請您一起見證</p>
-  <p>我們翻開新的一頁</p>
+  <p data-en="Our story quietly began<br><span class='nw'>on <span class='hl'>January 9, 2021</span></span>">我們的故事<br><span class="nw">在 <span class="hl">2021 年 1 月 9 日</span>悄悄起筆</span></p>
+  <p data-en="Six years later, on the same day">六年後的同一天</p>
+  <p data-en="we would love for you to witness">想邀請您一起見證</p>
+  <p data-en="as we turn to a new page">我們翻開新的一頁</p>
 </section>
 
 <section class="reveal" id="details">
   <div class="eyebrow">DETAILS</div>
   <h2>The Day</h2>
   <div class="card">
-    <div class="row"><div class="k">日期</div><div class="v">2027 年 1 月 9 日　星期六</div></div>
-    <div class="row"><div class="k">時間</div><div class="v">證婚儀式　17:00</div><div class="v" style="margin-top:2px">晚宴入席　18:00</div><div class="v" style="margin-top:2px">晚宴開席　18:30</div></div>
-    <div class="row"><div class="k">開放進場</div><div class="v">16:00 起</div><div class="s" style="margin-top:6px;line-height:1.8">園區內若無其他賓客<br>皆可自由拍照<br>歡迎提早到場<br>和我們合照</div></div>
-    <div class="row"><div class="k">地點</div><div class="v">青青食尚花園會館</div><div class="hall"><small>婚宴廳</small>｜<b>星空之森</b></div></div>
-    <div class="row"><div class="k">地址</div><div class="v" style="font-size:15px;letter-spacing:.05em;text-wrap:balance">台北市士林區至善路二段 266 巷 32 號</div></div>
-    <div class="row"><div class="k">保暖提醒</div><div class="v">半戶外會場　備有暖爐</div><div class="s" style="margin-top:6px;line-height:1.8">當天正值冬季<br>現場雖會提供暖爐<br>仍請大家做好保暖</div></div>
+    <div class="row"><div class="k" data-en="Date">日期</div><div class="v" data-en="Saturday, January 9, 2027">2027 年 1 月 9 日　星期六</div></div>
+    <div class="row"><div class="k" data-en="Time">時間</div><div class="v" data-en="Ceremony　17:00">證婚儀式　17:00</div><div class="v" style="margin-top:2px" data-en="Guests seated　18:00">晚宴入席　18:00</div><div class="v" style="margin-top:2px" data-en="Dinner begins　18:30">晚宴開席　18:30</div></div>
+    <div class="row"><div class="k" data-en="Doors open">開放進場</div><div class="v" data-en="From 16:00">16:00 起</div><div class="s" style="margin-top:6px;line-height:1.8" data-en="If no other guests are on the grounds,<br>feel free to take photos.<br>You are welcome to arrive early<br>and take photos with us.">園區內若無其他賓客<br>皆可自由拍照<br>歡迎提早到場<br>和我們合照</div></div>
+    <div class="row"><div class="k" data-en="Venue">地點</div><div class="v" data-en="CHIN CHIN Garden Restaurant<small class='zhsub'>青青食尚花園會館</small>">青青食尚花園會館</div><div class="hall" data-en="<small>Banquet Hall</small>｜<b>Starry Forest</b>"><small>婚宴廳</small>｜<b>星空之森</b></div></div>
+    <div class="row"><div class="k" data-en="Address">地址</div><div class="v" style="font-size:15px;letter-spacing:.05em;text-wrap:balance" data-en="No. 32, Ln. 266, Sec. 2, Zhishan Rd.,<br>Shilin Dist., Taipei City<small class='zhsub'>台北市士林區至善路二段 266 巷 32 號</small>">台北市士林區至善路二段 266 巷 32 號</div></div>
+    <div class="row"><div class="k" data-en="Dress warmly">保暖提醒</div><div class="v" data-en="Semi-outdoor venue,<br>heaters provided">半戶外會場　備有暖爐</div><div class="s" style="margin-top:6px;line-height:1.8" data-en="It is winter that day.<br>Heaters will be provided on site,<br>but please dress warmly.">當天正值冬季<br>現場雖會提供暖爐<br>仍請大家做好保暖</div></div>
   </div>
   <div class="btns">
-    <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8">開啟地圖</a>
-    <a class="btn" href="#shuttle">接駁專車</a>
-    <a class="btn" id="calBtn" href="wedding.ics">加入行事曆</a>
+    <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8" data-en="Open Map">開啟地圖</a>
+    <a class="btn" href="#shuttle" data-en="Shuttle Bus">接駁專車</a>
+    <a class="btn" id="calBtn" href="wedding.ics" data-en="Add to Calendar">加入行事曆</a>
   
-    <p class="calhelp" id="calHelp">行事曆按了沒反應<br>改用
-      <a href="wedding.ics">iPhone 日曆</a>｜<a target="_blank" rel="noopener" id="calGoogle" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%85%A5%E5%B8%AD%EF%BC%8F18%3A30%20%E9%96%8B%E5%B8%AD%EF%BC%89&dates=20270109T090000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E6%99%9A%E5%AE%B4%E5%85%A5%E5%B8%AD%EF%BC%8C18%3A30%20%E6%99%9A%E5%AE%B4%E9%96%8B%E5%B8%AD%E3%80%82%E5%B7%B7%E5%8F%A3%E5%85%A9%E5%81%B4%E6%98%AF%207-11%20%E8%88%87%E5%85%A8%E5%AE%B6%EF%BC%8C%E8%AB%8B%E7%94%B1%E6%AD%A4%E8%BD%89%E9%80%B2%E5%B0%8F%E5%B7%B7%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%EF%BC%9B%E5%89%8D%E6%96%B9%E7%9A%84%E6%A9%8B%E4%B8%80%E6%AC%A1%E5%8F%AA%E8%83%BD%E9%81%8E%E4%B8%80%E5%8F%B0%E8%BB%8A%EF%BC%8C%E5%BE%9E%207-11%E3%80%81%E5%85%A8%E5%AE%B6%E8%B5%B7%E8%AB%8B%E4%BE%9D%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei">Google 日曆</a><br>
-      <span id="calLine" style="display:none">您正在 LINE 裡開啟，若行事曆仍沒反應，請改用 <b>Safari</b> 或 <b>Chrome</b> 開啟這個網頁。</span></p>
+    <p class="calhelp" id="calHelp"><span data-en="Calendar not responding?">行事曆按了沒反應</span><br><span data-en="Try">改用</span>
+      <a href="wedding.ics" id="calIcs" data-en="iPhone Calendar">iPhone 日曆</a>｜<a target="_blank" rel="noopener" id="calGoogle" data-en="Google Calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%85%A5%E5%B8%AD%EF%BC%8F18%3A30%20%E9%96%8B%E5%B8%AD%EF%BC%89&dates=20270109T090000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E6%99%9A%E5%AE%B4%E5%85%A5%E5%B8%AD%EF%BC%8C18%3A30%20%E6%99%9A%E5%AE%B4%E9%96%8B%E5%B8%AD%E3%80%82%E5%B7%B7%E5%8F%A3%E5%85%A9%E5%81%B4%E6%98%AF%207-11%20%E8%88%87%E5%85%A8%E5%AE%B6%EF%BC%8C%E8%AB%8B%E7%94%B1%E6%AD%A4%E8%BD%89%E9%80%B2%E5%B0%8F%E5%B7%B7%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%EF%BC%9B%E5%89%8D%E6%96%B9%E7%9A%84%E6%A9%8B%E4%B8%80%E6%AC%A1%E5%8F%AA%E8%83%BD%E9%81%8E%E4%B8%80%E5%8F%B0%E8%BB%8A%EF%BC%8C%E5%BE%9E%207-11%E3%80%81%E5%85%A8%E5%AE%B6%E8%B5%B7%E8%AB%8B%E4%BE%9D%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei">Google 日曆</a><br>
+      <span id="calLine" style="display:none" data-en="You are opening this inside LINE. If the calendar still does not respond, please open this page in <b>Safari</b> or <b>Chrome</b>.">您正在 LINE 裡開啟，若行事曆仍沒反應，請改用 <b>Safari</b> 或 <b>Chrome</b> 開啟這個網頁。</span></p>
     <div class="calpick" id="calPick" hidden>
-      <div class="cp-t">請選擇您使用的日曆</div>
-      <a class="btn fill" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%85%A5%E5%B8%AD%EF%BC%8F18%3A30%20%E9%96%8B%E5%B8%AD%EF%BC%89&dates=20270109T090000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E6%99%9A%E5%AE%B4%E5%85%A5%E5%B8%AD%EF%BC%8C18%3A30%20%E6%99%9A%E5%AE%B4%E9%96%8B%E5%B8%AD%E3%80%82%E5%B7%B7%E5%8F%A3%E5%85%A9%E5%81%B4%E6%98%AF%207-11%20%E8%88%87%E5%85%A8%E5%AE%B6%EF%BC%8C%E8%AB%8B%E7%94%B1%E6%AD%A4%E8%BD%89%E9%80%B2%E5%B0%8F%E5%B7%B7%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%EF%BC%9B%E5%89%8D%E6%96%B9%E7%9A%84%E6%A9%8B%E4%B8%80%E6%AC%A1%E5%8F%AA%E8%83%BD%E9%81%8E%E4%B8%80%E5%8F%B0%E8%BB%8A%EF%BC%8C%E5%BE%9E%207-11%E3%80%81%E5%85%A8%E5%AE%B6%E8%B5%B7%E8%AB%8B%E4%BE%9D%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei">Google 日曆<small>使用 Gmail／Google 帳號</small></a>
-      <a class="btn" href="wedding.ics">Outlook／Apple 日曆<small>下載行事曆檔後開啟</small></a>
+      <div class="cp-t" data-en="Choose your calendar">請選擇您使用的日曆</div>
+      <a class="btn fill" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A1%8F%E5%9D%87%E7%BF%B0%20%EF%BC%86%20%E5%91%A8%E7%A2%A9%E6%85%88%20%E5%A9%9A%E7%A6%AE%EF%BC%8817%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8F18%3A00%20%E5%85%A5%E5%B8%AD%EF%BC%8F18%3A30%20%E9%96%8B%E5%B8%AD%EF%BC%89&dates=20270109T090000Z%2F20270109T133000Z&details=16%3A00%20%E8%B5%B7%E9%96%8B%E6%94%BE%E9%80%B2%E5%A0%B4%EF%BC%88%E5%9C%92%E5%8D%80%E7%84%A1%E5%85%B6%E4%BB%96%E8%B3%93%E5%AE%A2%E6%99%82%E7%9A%86%E5%8F%AF%E6%8B%8D%E7%85%A7%EF%BC%89%E3%80%8217%3A00%20%E8%AD%89%E5%A9%9A%E5%84%80%E5%BC%8F%EF%BC%8C18%3A00%20%E6%99%9A%E5%AE%B4%E5%85%A5%E5%B8%AD%EF%BC%8C18%3A30%20%E6%99%9A%E5%AE%B4%E9%96%8B%E5%B8%AD%E3%80%82%E5%B7%B7%E5%8F%A3%E5%85%A9%E5%81%B4%E6%98%AF%207-11%20%E8%88%87%E5%85%A8%E5%AE%B6%EF%BC%8C%E8%AB%8B%E7%94%B1%E6%AD%A4%E8%BD%89%E9%80%B2%E5%B0%8F%E5%B7%B7%EF%BC%88%E8%87%B3%E5%96%84%E8%B7%AF%20266%20%E5%B7%B7%EF%BC%89%EF%BC%9B%E5%89%8D%E6%96%B9%E7%9A%84%E6%A9%8B%E4%B8%80%E6%AC%A1%E5%8F%AA%E8%83%BD%E9%81%8E%E4%B8%80%E5%8F%B0%E8%BB%8A%EF%BC%8C%E5%BE%9E%207-11%E3%80%81%E5%85%A8%E5%AE%B6%E8%B5%B7%E8%AB%8B%E4%BE%9D%E7%8F%BE%E5%A0%B4%E4%BA%BA%E5%93%A1%E6%8C%87%E6%8F%AE%E3%80%82&location=%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8%20%E5%A9%9A%E5%AE%B4%E5%BB%B3%E3%80%8C%E6%98%9F%E7%A9%BA%E4%B9%8B%E6%A3%AE%E3%80%8D%EF%BC%88%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E8%87%B3%E5%96%84%E8%B7%AF%E4%BA%8C%E6%AE%B5266%E5%B7%B732%E8%99%9F%EF%BC%89&ctz=Asia%2FTaipei" id="calGoogle2" data-en="Google Calendar<small>For Gmail / Google accounts</small>">Google 日曆<small>使用 Gmail／Google 帳號</small></a>
+      <a class="btn" id="calIcs2" href="wedding.ics" data-en="Outlook / Apple Calendar<small>Download the file, then open it</small>">Outlook／Apple 日曆<small>下載行事曆檔後開啟</small></a>
     </div>
   </div>
   <div class="rule"></div>
-  <div class="eyebrow">COUNTDOWN　距離證婚儀式</div>
+  <div class="eyebrow" data-en="COUNTDOWN　to the ceremony">COUNTDOWN　距離證婚儀式</div>
   <div class="count" id="count">
     <div><b id="cd">–</b><span>DAYS</span></div>
     <div><b id="ch">–</b><span>HOURS</span></div>
@@ -228,30 +257,30 @@ footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
 
 <section class="reveal" style="padding-top:8px;padding-bottom:36px">
   <div class="shuttle" id="shuttle">
-    <div class="sh-t">接駁專車 <small>Shuttle Bus</small></div>
-    <p class="sh-lead">從「士林捷運站」搭專車到會館<br>輕鬆又方便</p>
+    <div class="sh-t" data-en="Shuttle Bus <small>接駁專車</small>">接駁專車 <small>Shuttle Bus</small></div>
+    <p class="sh-lead" data-en="Take the shuttle from<br>Shilin MRT Station to the venue,<br>easy and convenient">從「士林捷運站」搭專車到會館<br>輕鬆又方便</p>
 
-    <div class="sh-label">發車時間　晚宴</div>
+    <div class="sh-label" data-en="Evening departures">發車時間　晚宴</div>
     <div class="sh-times">
-      <div class="rec"><i>證婚建議</i>16:45<em>約 17:00 抵達</em></div>
-      <div class="rec"><i>晚宴建議</i>17:15<em>約 17:30 抵達</em></div>
-      <div>17:45<em>約 18:00 抵達</em></div>
-      <div>18:15<em>約 18:30 抵達</em></div>
+      <div class="rec"><i data-en="Ceremony">證婚建議</i>16:45<em data-en="Arrives ~17:00">約 17:00 抵達</em></div>
+      <div class="rec"><i data-en="Dinner">晚宴建議</i>17:15<em data-en="Arrives ~17:30">約 17:30 抵達</em></div>
+      <div>17:45<em data-en="Arrives ~18:00">約 18:00 抵達</em></div>
+      <div>18:15<em data-en="Arrives ~18:30">約 18:30 抵達</em></div>
     </div>
-    <p class="sh-note">車程約 15 分鐘。<br>證婚儀式 <b>17:00</b>，晚宴入席 <b>18:00</b>，開席 <b>18:30</b>。<br>
+    <p class="sh-note" data-en="The ride takes about 15 minutes. Ceremony <b>17:00</b>, seating <b>18:00</b>, dinner <b>18:30</b>.<br>For the ceremony, take the <b>16:45</b> shuttle. For dinner only, take the <b>17:15</b> shuttle.<br>Please wait at the boarding point 10 minutes early.<br><span class='sh-small'>The 16:45 shuttle arrives just as the ceremony begins, so please be on time. The 17:45 shuttle arrives at 18:00, when guests are seated; the 18:15 shuttle arrives at 18:30, when dinner has begun.</span>">車程約 15 分鐘。<br>證婚儀式 <b>17:00</b>，晚宴入席 <b>18:00</b>，開席 <b>18:30</b>。<br>
       想參加證婚儀式，請搭 <b>16:45</b>。<br>只參加晚宴，請搭 <b>17:15</b>。<br>
       請提早 10 分鐘到乘車處等候。<br>
       <span class="sh-small">16:45 班次抵達時證婚儀式剛好開始，請準時到乘車處；17:45 班次剛好 18:00 抵達入席；18:15 班次抵達時已是 18:30 開席。</span></p>
 
-    <div class="sh-label">怎麼搭</div>
+    <div class="sh-label" data-en="How to get there">怎麼搭</div>
     <ol class="sh-steps">
-      <li><span>1</span><div>搭捷運<b>淡水線</b>到<b>「士林站」</b></div></li>
-      <li><span>2</span><div>從 <b>1 號出口</b>出站</div></li>
-      <li><span>3</span><div><b>直走</b>，到<b>中正路左側</b><br>（中正路 249 號），找「青青接駁專車」</div></li>
-      <li><span>4</span><div>依發車時間上車</div></li>
+      <li><span>1</span><div data-en="Take the MRT <b>Tamsui Line</b> to <b>Shilin Station</b>">搭捷運<b>淡水線</b>到<b>「士林站」</b></div></li>
+      <li><span>2</span><div data-en="Leave through <b>Exit 1</b>">從 <b>1 號出口</b>出站</div></li>
+      <li><span>3</span><div data-en="<b>Walk straight</b> to the <b>left side of Zhongzheng Rd.</b><br>(No. 249) and look for the “Chin Chin shuttle bus”"><b>直走</b>，到<b>中正路左側</b><br>（中正路 249 號），找「青青接駁專車」</div></li>
+      <li><span>4</span><div data-en="Board according to the departure times">依發車時間上車</div></li>
     </ol>
     <div class="btns" style="margin-top:20px">
-      <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF249%E8%99%9F">開啟乘車處地圖</a>
+      <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF249%E8%99%9F" data-en="Open boarding-point map">開啟乘車處地圖</a>
     </div>
   </div>
 
@@ -267,56 +296,56 @@ footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
 
 <section class="reveal mapsec">
   <div class="eyebrow">MAP</div>
-  <h2 style="font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:.3em;margin-left:.3em;font-size:28px">場地位置</h2>
-  <a href="img/venue-map.jpg" target="_blank" rel="noopener"><img class="mapimg" src="img/venue-map.jpg" alt="青青食尚花園會館 位置示意圖：至善路二段 266 巷 32 號"></a>
-  <p style="font-size:13px;letter-spacing:.2em;color:var(--gold-d);margin-top:8px">點圖可放大　停車位置為示意，請依現場指示</p>
-  <p class="mapcap">青青食尚花園會館<br><span>台北市士林區至善路二段 266 巷 32 號</span></p>
+  <h2 style="font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:.3em;margin-left:.3em;font-size:28px" data-en="Location">場地位置</h2>
+  <a href="img/venue-map.jpg" data-href-en="img/venue-map-en.jpg" target="_blank" rel="noopener"><img class="mapimg" src="img/venue-map.jpg" data-src-en="img/venue-map-en.jpg" alt="青青食尚花園會館 位置示意圖：至善路二段 266 巷 32 號" data-alt-en="Map of CHIN CHIN Garden Restaurant: No. 32, Ln. 266, Sec. 2, Zhishan Rd."></a>
+  <p style="font-size:13px;letter-spacing:.2em;color:var(--gold-d);margin-top:8px" data-en="Tap the map to enlarge. Parking positions are approximate; please follow the on-site directions.">點圖可放大　停車位置為示意，請依現場指示</p>
+  <p class="mapcap" data-en="CHIN CHIN Garden Restaurant<br><span>No. 32, Ln. 266, Sec. 2, Zhishan Rd., Shilin Dist., Taipei City</span><br><span>台北市士林區至善路二段 266 巷 32 號</span>">青青食尚花園會館<br><span>台北市士林區至善路二段 266 巷 32 號</span></p>
   <div class="btns" style="margin-top:18px">
-    <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8">開啟地圖導航</a>
+    <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%AB%E6%9E%97%E9%9D%92%E9%9D%92%E9%A3%9F%E5%B0%9A%E8%8A%B1%E5%9C%92%E6%9C%83%E9%A4%A8" data-en="Navigate with Google Maps">開啟地圖導航</a>
   </div>
 </section>
 
 <section class="tr reveal" style="padding-top:20px">
   <div style="text-align:center">
     <div class="eyebrow">OTHER WAYS</div>
-    <h2 style="font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:.3em;margin-left:.3em;font-size:28px">自行前往</h2>
-    <div class="alt-note">不搭接駁專車的賓客，請看這裡<br><a href="#shuttle">要搭接駁專車？請看上方的接駁專車</a></div>
+    <h2 style="font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:.3em;margin-left:.3em;font-size:28px" data-en="Getting There">自行前往</h2>
+    <div class="alt-note" data-en="For guests not taking the shuttle, please read below<br><a href='#shuttle'>Taking the shuttle? See “Shuttle Bus”</a>">不搭接駁專車的賓客，請看這裡<br><a href="#shuttle">要搭接駁專車？請看上方的接駁專車</a></div>
   </div>
 
 
-  <h3>自行開車 <small>Drive</small></h3>
+  <h3 data-en="Driving <small>自行開車</small>">自行開車 <small>Drive</small></h3>
   <ol>
-    <li><b style="font-weight:500">南下</b>：高速公路 → 堤頂大道下 → 右轉快速道路至內湖路一段 → 過自強隧道 → 故宮路與至善路口右轉 → 青青食尚花園會館。</li>
-    <li><b style="font-weight:500">北上</b>：高速公路 → 濱江交流道下 → 左轉大直橋 → 過自強隧道 → 故宮路與至善路口右轉 → 青青食尚花園會館。</li>
-    <li><b style="font-weight:500">台北市東區</b> → 正氣橋 → 堤頂大道 → 過自強隧道即可抵達。</li>
-    <li><b style="font-weight:500">台北市北區</b> → 中山北路或文林路 → 中正路往外雙溪方向即可抵達。</li>
-    <li><b style="font-weight:500">台北市區</b> → 復興北路機場地下道 → 過大直橋右轉 → 過自強隧道即可抵達。</li>
+    <li data-en="<b style='font-weight:500'>Southbound</b>: Freeway → exit at Diding Ave. → turn right onto the expressway toward Neihu Rd. Sec. 1 → through the Zihciang Tunnel → turn right at Gugong Rd. and Zhishan Rd. → CHIN CHIN Garden Restaurant."><b style="font-weight:500">南下</b>：高速公路 → 堤頂大道下 → 右轉快速道路至內湖路一段 → 過自強隧道 → 故宮路與至善路口右轉 → 青青食尚花園會館。</li>
+    <li data-en="<b style='font-weight:500'>Northbound</b>: Freeway → exit at Binjiang Interchange → turn left onto Dazhi Bridge → through the Zihciang Tunnel → turn right at Gugong Rd. and Zhishan Rd. → CHIN CHIN Garden Restaurant."><b style="font-weight:500">北上</b>：高速公路 → 濱江交流道下 → 左轉大直橋 → 過自強隧道 → 故宮路與至善路口右轉 → 青青食尚花園會館。</li>
+    <li data-en="<b style='font-weight:500'>Eastern Taipei</b> → Zhengqi Bridge → Diding Ave. → through the Zihciang Tunnel and you have arrived."><b style="font-weight:500">台北市東區</b> → 正氣橋 → 堤頂大道 → 過自強隧道即可抵達。</li>
+    <li data-en="<b style='font-weight:500'>Northern Taipei</b> → Zhongshan N. Rd. or Wenlin Rd. → Zhongzheng Rd. toward Waishuangxi → you have arrived."><b style="font-weight:500">台北市北區</b> → 中山北路或文林路 → 中正路往外雙溪方向即可抵達。</li>
+    <li data-en="<b style='font-weight:500'>Central Taipei</b> → Fuxing N. Rd. airport underpass → turn right after Dazhi Bridge → through the Zihciang Tunnel and you have arrived."><b style="font-weight:500">台北市區</b> → 復興北路機場地下道 → 過大直橋右轉 → 過自強隧道即可抵達。</li>
   </ol>
 
   <div style="margin-top:6px">
     <div class="notice">
-      <div class="t">NOTICE　行車提醒</div>
+      <div class="t" data-en="NOTICE　Driving tips">NOTICE　行車提醒</div>
       <ol class="rd">
-        <li><span>1</span><div>先找到巷口兩側的 <b>7-11</b> 和 <b>全家</b></div></li>
-        <li><span>2</span><div>從這裡<b>轉進小巷</b>（至善路 266 巷）</div></li>
-        <li><span>3</span><div>前方的橋，<b>一次只能過一台車</b></div></li>
+        <li><span>1</span><div data-en="First find the <b>7-11</b> and <b>FamilyMart</b> on both sides of the lane entrance">先找到巷口兩側的 <b>7-11</b> 和 <b>全家</b></div></li>
+        <li><span>2</span><div data-en="Turn into the <b>small lane</b> here (Ln. 266, Zhishan Rd.)">從這裡<b>轉進小巷</b>（至善路 266 巷）</div></li>
+        <li><span>3</span><div data-en="The bridge ahead allows <b>only one car at a time</b>">前方的橋，<b>一次只能過一台車</b></div></li>
       </ol>
-      <div class="m">從 7-11、全家這裡開始，會有現場工作人員指揮車輛，請依指示行駛，謝謝您的配合。</div>
+      <div class="m" data-en="From the 7-11 and FamilyMart onward, on-site staff will direct traffic. Please follow their instructions. Thank you for your cooperation.">從 7-11、全家這裡開始，會有現場工作人員指揮車輛，請依指示行駛，謝謝您的配合。</div>
     </div>
   </div>
 
-  <h3>停車 <small>Parking</small></h3>
+  <h3 data-en="Parking <small>停車</small>">停車 <small>Parking</small></h3>
   <div class="park">
     <div class="pk">
-      <div class="pk-t">會館門口停車場<i class="free">免費</i></div>
-      <p>就在會館門口，位置圖上<b>金色的 P</b>。<br>全園區共用，約 100～150 個車位，<b>請依現場工作人員指揮停車</b>。</p>
+      <div class="pk-t" data-en="Venue entrance lot<i class='free'>FREE</i>">會館門口停車場<i class="free">免費</i></div>
+      <p data-en="Right at the venue entrance, shown as the <b>gold “P”</b> on the map.<br>Shared by the whole grounds, about 100–150 spaces. <b>Please follow the on-site staff’s directions.</b>">就在會館門口，位置圖上<b>金色的 P</b>。<br>全園區共用，約 100～150 個車位，<b>請依現場工作人員指揮停車</b>。</p>
     </div>
     <div class="pk">
-      <div class="pk-t">故宮廣場汽車停車場<i>收費</i></div>
-      <p>位於故宮對面，位置圖上<b>深色的 P</b>。<br>停好車後，步行約 <b>6～8 分鐘</b>到會館。</p>
-      <div class="btns" style="justify-content:flex-start;margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%95%85%E5%AE%AE%E5%BB%A3%E5%A0%B4%E6%B1%BD%E8%BB%8A%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80">在 Google 地圖查看</a></div>
+      <div class="pk-t" data-en="Palace Museum Plaza lot<i>PAID</i>">故宮廣場汽車停車場<i>收費</i></div>
+      <p data-en="Across from the National Palace Museum, shown as the <b>dark “P”</b> on the map.<br>After parking, it is about a <b>6–8 minute</b> walk to the venue.">位於故宮對面，位置圖上<b>深色的 P</b>。<br>停好車後，步行約 <b>6～8 分鐘</b>到會館。</p>
+      <div class="btns" style="justify-content:flex-start;margin-top:10px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%95%85%E5%AE%AE%E5%BB%A3%E5%A0%B4%E6%B1%BD%E8%BB%8A%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80" data-en="View on Google Maps">在 Google 地圖查看</a></div>
     </div>
-    <div class="pk-warn"><b>小提醒：</b>會館門口的車位有限，若已停滿，就無法再開放車輛進場，要麻煩改停<b class="nw">故宮廣場汽車停車場(收費)</b>。<br>開車的朋友若方便，歡迎<b class="nw">提早到</b>。</div>
+    <div class="pk-warn" data-en="<b>A gentle reminder: </b>Parking at the venue entrance is limited. If it is full, no more vehicles can be let in, and we kindly ask you to park at the <b class='nw'>Palace Museum Plaza lot (paid)</b>.<br>If it is convenient, you are welcome to <b class='nw'>arrive a little early</b>."><b>小提醒：</b>會館門口的車位有限，若已停滿，就無法再開放車輛進場，要麻煩改停<b class="nw">故宮廣場汽車停車場(收費)</b>。<br>開車的朋友若方便，歡迎<b class="nw">提早到</b>。</div>
   </div>
 
   <!-- 已隱藏：取消與 55688 計程車合作。要恢復時，移除這行與下方的結尾註解即可。
@@ -325,8 +354,8 @@ footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
   <div class="btns" style="justify-content:flex-start;margin-top:12px"><a class="btn fill" id="passlink" href="pass.html">開啟賓客乘車證</a></div>
   -->
 
-  <h3>捷運 ／ 公車 <small>MRT · Bus</small></h3>
-  <p>捷運淡水線至<b style="font-weight:500">士林站</b>，轉乘公車 815、255、304。<br>
+  <h3 data-en="MRT / Bus <small>捷運／公車</small>">捷運 ／ 公車 <small>MRT · Bus</small></h3>
+  <p data-en="Take the MRT Tamsui Line to <b style='font-weight:500'>Shilin Station</b>, then transfer to bus 815, 255 or 304.<br>Or take minibus 18 or 19, or the holiday leisure bus 101, to the <b style='font-weight:500'>National Palace Museum</b> stop.">捷運淡水線至<b style="font-weight:500">士林站</b>，轉乘公車 815、255、304。<br>
      小型公車 18、19，假日休閒公車 101，至<b style="font-weight:500">故宮博物院站</b>下車。</p>
 
 </section>
@@ -334,37 +363,39 @@ footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
 <section class="reveal" style="padding-top:8px;padding-bottom:14px">
   <div class="access">
     <div class="ac-t">ACCESSIBILITY</div>
-    <div class="ac-h">長輩與行動不便的貴賓</div>
-    <p><b>園區皆為平面</b>，不需要爬階梯。</p>
-    <p>若需要協助，可向<b>門口的會場人員</b>詢問<b>「園區接駁車」</b><span style="white-space:nowrap">（類似高爾夫球車）。</span></p>
+    <div class="ac-h" data-en="For elders and guests with limited mobility">長輩與行動不便的貴賓</div>
+    <p data-en="<b>The grounds are all flat</b>, with no stairs to climb."><b>園區皆為平面</b>，不需要爬階梯。</p>
+    <p data-en="If you need help, please ask the <b>staff at the entrance</b> about the <b>“park shuttle”</b> <span style='white-space:nowrap'>(similar to a golf cart).</span>">若需要協助，可向<b>門口的會場人員</b>詢問<b>「園區接駁車」</b><span style="white-space:nowrap">（類似高爾夫球車）。</span></p>
   </div>
 </section>
 
 <section class="reveal" style="padding-top:0;padding-bottom:28px">
   <div class="access">
     <div class="ac-t">GOING HOME</div>
-    <div class="ac-h">散場後的回程叫車</div>
-    <p>晚宴結束後，青青食尚有提供<b style="white-space:nowrap">叫車服務</b>。</p>
-    <p>需要的朋友，請向<b>會場人員</b>說一聲，會有人協助您叫車。</p>
+    <div class="ac-h" data-en="Getting home">散場後的回程叫車</div>
+    <p data-en="After the banquet, Chin Chin offers a <b style='white-space:nowrap'>taxi-calling service</b>.">晚宴結束後，青青食尚有提供<b style="white-space:nowrap">叫車服務</b>。</p>
+    <p data-en="If you would like one, just let a <b>member of staff</b> know and they will help you call a taxi.">需要的朋友，請向<b>會場人員</b>說一聲，會有人協助您叫車。</p>
   </div>
 </section>
 
 <footer class="reveal">
   <div class="script">With love</div>
-  <div style="font-size:20px;letter-spacing:.3em;margin-top:6px">均翰 ＆ 碩慈</div>
-  <p>期待與您相見</p>
+  <div class="fnames" style="font-size:20px;letter-spacing:.3em;margin-top:6px">均翰 ＆ 碩慈</div>
+  <p data-en="We look forward to seeing you">期待與您相見</p>
 </footer>
 
 </div>
 
 <script>
-// Personal greeting:  index.html?to=王小明
-(function(){
-  var to=new URLSearchParams(location.search).get('to');
-  var el=document.getElementById('greet');
-  el.textContent = to ? '親愛的 '+to.slice(0,20) : '親愛的您';
-  if(to){var pl=document.getElementById('passlink'); if(pl) pl.href='pass.html?to='+encodeURIComponent(to.slice(0,20));}
-})();
+// Personal greeting:  index.html?to=王小明   (language aware; the name is always inserted as plain text)
+var GUEST=(function(){var t=new URLSearchParams(location.search).get('to');return t?t.slice(0,20):''})();
+function renderGreeting(){
+  var el=document.getElementById('greet'); if(!el) return;
+  var en=document.documentElement.lang==='en';
+  el.textContent = en ? (GUEST ? 'Dear '+GUEST : 'Dear Guest') : (GUEST ? '親愛的 '+GUEST : '親愛的您');
+  var pl=document.getElementById('passlink'); if(pl&&GUEST) pl.href='pass.html?to='+encodeURIComponent(GUEST);
+}
+renderGreeting();
 
 // Countdown to the ceremony (Asia/Taipei, UTC+8)
 (function(){
@@ -392,23 +423,69 @@ footer p{margin-top:10px;font-size:14px;letter-spacing:.3em;color:var(--gold-d)}
   els.forEach(function(e){io.observe(e)});
 })();
 
-// Add to calendar: pick the right route for the device.
+// Add to calendar: pick the right route for the device (and the right language).
 (function(){
   var ua=navigator.userAgent||'';
   var isIOS=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-  var isMac=/Macintosh/i.test(ua)&&!isIOS;
   var isAndroid=/Android/i.test(ua);
   var inLine=/Line\//i.test(ua);
   var btn=document.getElementById('calBtn'), g=document.getElementById('calGoogle');
   if(!btn||!g) return;
+  var g2=document.getElementById('calGoogle2'), ics1=document.getElementById('calIcs'), ics2=document.getElementById('calIcs2');
   var desktop=!isIOS&&!isAndroid;   // computers: let the guest choose, we can't know which calendar they use
+  var TXT={
+    zh:{text:'顏均翰 ＆ 周碩慈 婚禮（17:00 證婚儀式／18:00 入席／18:30 開席）',
+        details:'16:00 起開放進場（園區無其他賓客時皆可拍照）。17:00 證婚儀式，18:00 晚宴入席，18:30 晚宴開席。巷口兩側是 7-11 與全家，請由此轉進小巷（至善路 266 巷）；前方的橋一次只能過一台車，從 7-11、全家起請依現場人員指揮。',
+        location:'青青食尚花園會館 婚宴廳「星空之森」（台北市士林區至善路二段266巷32號）',ics:'wedding.ics'},
+    en:{text:'Wedding of 顏均翰 & 周碩慈 (17:00 Ceremony / 18:00 Seating / 18:30 Dinner)',
+        details:'Doors open from 16:00 (photos welcome when no other guests are on the grounds). Ceremony 17:00, seating 18:00, dinner 18:30. Look for the 7-11 and FamilyMart on both sides of the lane entrance and turn into the small lane (Ln. 266, Zhishan Rd.); the bridge ahead fits one car at a time. From the 7-11 and FamilyMart onward, please follow the on-site staff.',
+        location:'CHIN CHIN Garden Restaurant, Starry Forest Hall (No. 32, Ln. 266, Sec. 2, Zhishan Rd., Shilin Dist., Taipei City)',ics:'wedding-en.ics'}
+  };
+  function gcal(l){var t=TXT[l];return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(t.text)+'&dates='+encodeURIComponent('20270109T090000Z/20270109T133000Z')+'&details='+encodeURIComponent(t.details)+'&location='+encodeURIComponent(t.location)+'&ctz='+encodeURIComponent('Asia/Taipei')}
+  function refresh(){
+    var l=document.documentElement.lang==='en'?'en':'zh', url=gcal(l), ics=TXT[l].ics;
+    g.href=url; if(g2) g2.href=url; if(ics1) ics1.href=ics; if(ics2) ics2.href=ics;
+    if(isIOS){ btn.href=ics; btn.removeAttribute('target'); }
+    else if(isAndroid){ btn.href=url; btn.target='_blank'; btn.rel='noopener'; }   // Android: Google Calendar
+  }
   if(desktop){
     var pick=document.getElementById('calPick'), help=document.getElementById('calHelp');
     if(help) help.style.display='none';
     btn.addEventListener('click',function(e){e.preventDefault(); pick.hidden=!pick.hidden;});
-  } else if(isIOS){ btn.href='wedding.ics'; btn.removeAttribute('target'); }
-  else { btn.href=g.href; btn.target='_blank'; btn.rel='noopener'; }   // Android: Google Calendar
+  }
   if(inLine){ var l=document.getElementById('calLine'); if(l) l.style.display='inline'; }
+  document.addEventListener('langchange',refresh);
+  refresh();
+})();
+
+// Language switch: Chinese is authored in the HTML; English lives in each element's data-en attribute.
+(function(){
+  var root=document.documentElement;
+  var nodes=[].slice.call(document.querySelectorAll('[data-en]'));
+  nodes.forEach(function(e){e.setAttribute('data-zh',e.innerHTML)});
+  var attrNodes=[];
+  [['data-src-en','src'],['data-href-en','href'],['data-alt-en','alt']].forEach(function(p){
+    [].slice.call(document.querySelectorAll('['+p[0]+']')).forEach(function(e){e.setAttribute('data-'+p[1]+'-zh',e.getAttribute(p[1])||''); attrNodes.push([e,p])});
+  });
+  var TITLE={zh:'顏均翰 ＆ 周碩慈 婚禮邀請', en:'Wedding Invitation · 顏均翰 & 周碩慈'};
+  var btns=[].slice.call(document.querySelectorAll('.lang button'));
+  function apply(l,persist){
+    var en=l==='en';
+    root.lang=en?'en':'zh-Hant';
+    nodes.forEach(function(e){e.innerHTML=e.getAttribute(en?'data-en':'data-zh')});
+    attrNodes.forEach(function(x){var e=x[0],p=x[1]; e.setAttribute(p[1], en?e.getAttribute(p[0]):e.getAttribute('data-'+p[1]+'-zh'))});
+    document.title=TITLE[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed', b.getAttribute('data-lang')===l?'true':'false')});
+    renderGreeting();
+    if(persist){
+      try{localStorage.setItem('invite-lang',l)}catch(e){}
+      try{var u=new URL(location.href); if(en) u.searchParams.set('lang','en'); else u.searchParams.delete('lang'); history.replaceState(null,'',u.toString())}catch(e){}
+    }
+    root.className=root.className.replace(/\s*pending-en/,'');
+    document.dispatchEvent(new Event('langchange'));
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-lang'),true)})});
+  apply(root.lang==='en'?'en':'zh',false);
 })();
 </script>
 </body>
