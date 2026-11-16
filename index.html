@@ -196,7 +196,7 @@ html[lang="en"] .row .v,html[lang="en"] .sh-lead,html[lang="en"] .ac-h,html[lang
 @page{size:480px 1200px;margin:0}
 @media print{
   html,body{background:var(--bg)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .no-print,.lang,.hero .scroll,#calBtn,#calHelp,#calPick{display:none!important}
+  .no-print,.lang,.hero .scroll,#calBtn,#calHelp,#calPick,.btns,.btn{display:none!important}
   .reveal{opacity:1!important;transform:none!important;transition:none!important}
   .wrap{max-width:none;box-shadow:none}
   section{padding-top:36px;padding-bottom:36px}
@@ -516,7 +516,8 @@ renderGreeting();
 (function(){
   var q=location.search, m=q.match(/[?&]ph=(\d{3,4})/), isPdf=/[?&]pdf=1/.test(q);
   if(m){var st=document.createElement('style');st.textContent='@page{size:480px '+m[1]+'px;margin:0}';document.head.appendChild(st)}
-  if(isPdf){[].slice.call(document.querySelectorAll('a[href]')).forEach(function(a){var h=a.getAttribute('href');
+  if(isPdf){[].slice.call(document.querySelectorAll('.alt-note a,.mapsec > a')).forEach(function(a){var f=document.createDocumentFragment();while(a.firstChild)f.appendChild(a.firstChild);a.parentNode.replaceChild(f,a)});
+  [].slice.call(document.querySelectorAll('a[href]')).forEach(function(a){var h=a.getAttribute('href');
     if(h&&h.charAt(0)!=='#'&&!/^[a-z][a-z0-9+.-]*:/i.test(h)) a.setAttribute('href',new URL(h,'https://jyh-cst-wedding-invite.vercel.app/').href)})}
 })();
 </script>
