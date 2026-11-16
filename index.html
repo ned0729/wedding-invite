@@ -192,6 +192,25 @@ html[lang="en"] .tr h3{letter-spacing:.04em!important}
 html[lang="en"] p,html[lang="en"] .row .s,html[lang="en"] .m{text-wrap:pretty}
 html[lang="en"] .row .v,html[lang="en"] .sh-lead,html[lang="en"] .ac-h,html[lang="en"] .pk-t{text-wrap:balance}
 @media (max-width:340px){.row .v{font-size:16.5px;letter-spacing:.05em}}
+/* PDF / print: tall phone-friendly pages (480 x 1200 px) so the file reads well on a phone, too */
+@page{size:480px 1200px;margin:0}
+@media print{
+  html,body{background:var(--bg)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .no-print,.lang,.hero .scroll,#calBtn,#calHelp,#calPick{display:none!important}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .wrap{max-width:none;box-shadow:none}
+  section{padding-top:36px;padding-bottom:36px}
+  .hero{height:820px;min-height:0}
+  .hero img{animation:none!important}
+  section,.shuttle,.card,.notice,.access,.pk,.pk-warn,.photos,.mapsec,footer,.sh-steps li,.tr li{break-inside:avoid}
+  h2,h3,.eyebrow,.sh-label{break-after:avoid}
+  /* one topic per page */
+  #details,section:has(> .shuttle),.photos,section.tr,h3:has(+ .park),section:has(+ .no-print){break-before:page}
+  .tr .notice{margin-top:18px}
+  .photos .p1{aspect-ratio:2/1}
+  .photos .pair img{height:240px;aspect-ratio:auto}
+  footer{padding-top:200px}
+}
 @media (prefers-reduced-motion:reduce){.hero img,.hero .scroll .arr{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
@@ -245,9 +264,9 @@ html[lang="en"] .row .v,html[lang="en"] .sh-lead,html[lang="en"] .ac-h,html[lang
       <a class="btn" id="calIcs2" href="wedding.ics" data-en="Outlook / Apple Calendar<small>Download the file, then open it</small>">Outlook／Apple 日曆<small>下載行事曆檔後開啟</small></a>
     </div>
   </div>
-  <div class="rule"></div>
-  <div class="eyebrow" data-en="COUNTDOWN　to the ceremony">COUNTDOWN　距離證婚儀式</div>
-  <div class="count" id="count">
+  <div class="rule no-print"></div>
+  <div class="eyebrow no-print" data-en="COUNTDOWN　to the ceremony">COUNTDOWN　距離證婚儀式</div>
+  <div class="count no-print" id="count">
     <div><b id="cd">–</b><span>DAYS</span></div>
     <div><b id="ch">–</b><span>HOURS</span></div>
     <div><b id="cm">–</b><span>MINS</span></div>
@@ -378,6 +397,10 @@ html[lang="en"] .row .v,html[lang="en"] .sh-lead,html[lang="en"] .ac-h,html[lang
   </div>
 </section>
 
+<section class="reveal no-print" style="padding-top:0;padding-bottom:40px;text-align:center">
+  <a class="btn" id="pdfBtn" href="pdf/invitation-zh.pdf" data-href-en="pdf/invitation-en.pdf" download data-en="Download this invitation (PDF)">下載喜帖 PDF</a>
+</section>
+
 <footer class="reveal">
   <div class="script">With love</div>
   <div class="fnames" style="font-size:20px;letter-spacing:.3em;margin-top:6px">均翰 ＆ 碩慈</div>
@@ -486,6 +509,15 @@ renderGreeting();
   }
   btns.forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-lang'),true)})});
   apply(root.lang==='en'?'en':'zh',false);
+})();
+
+// PDF export helper (only used when the PDF files are made):
+//   index.html?pdf=1&ph=1400   -> printed pages 1400 px tall (default 1200), relative links become absolute site links
+(function(){
+  var q=location.search, m=q.match(/[?&]ph=(\d{3,4})/), isPdf=/[?&]pdf=1/.test(q);
+  if(m){var st=document.createElement('style');st.textContent='@page{size:480px '+m[1]+'px;margin:0}';document.head.appendChild(st)}
+  if(isPdf){[].slice.call(document.querySelectorAll('a[href]')).forEach(function(a){var h=a.getAttribute('href');
+    if(h&&h.charAt(0)!=='#'&&!/^[a-z][a-z0-9+.-]*:/i.test(h)) a.setAttribute('href',new URL(h,'https://jyh-cst-wedding-invite.vercel.app/').href)})}
 })();
 </script>
 </body>
