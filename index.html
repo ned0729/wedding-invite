@@ -205,11 +205,15 @@ html[lang="en"] .row .v,html[lang="en"] .sh-lead,html[lang="en"] .ac-h,html[lang
   section,.shuttle,.card,.notice,.access,.pk,.pk-warn,.photos,.mapsec,footer,.sh-steps li,.tr li{break-inside:avoid}
   h2,h3,.eyebrow,.sh-label{break-after:avoid}
   /* one topic per page */
-  #details,section:has(> .shuttle),.photos,section.tr,h3:has(+ .park),section:has(+ .no-print){break-before:page}
+  #details,section:has(> .shuttle),.photos,section.tr,h3:has(+ .park),footer{break-before:page}
   .tr .notice{margin-top:18px}
   .photos .p1{aspect-ratio:2/1}
   .photos .pair img{height:240px;aspect-ratio:auto}
-  footer{padding-top:200px}
+  section.tr{padding-bottom:8px}
+  .tr h3{margin-top:22px}
+  section:has(> .access){padding-top:0!important;padding-bottom:16px!important}
+  section:has(+ .no-print){padding-bottom:0!important}
+  footer{min-height:calc(100vh - 2px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 24px}
 }
 @media (prefers-reduced-motion:reduce){.hero img,.hero .scroll .arr{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
